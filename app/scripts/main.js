@@ -34,7 +34,7 @@ function setQuestionDOM(question){
 
 		input.onkeyup = function(){
 			console.log(i);
-			if(this.value.toLowerCase() === answers[this.iAnswer]){
+			if(this.value.toLowerCase() === answers[this.iAnswer].toLowerCase()){
 				$(this).removeClass('wrong');
 				$(this).addClass('correct');
 			}
