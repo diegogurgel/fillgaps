@@ -1,8 +1,7 @@
 {
 	"Title":"Atividade de fixação",
 	"questions":[
-		{"question":"It's a simple [].", "answers":[["question","mult"],["xxxx"]]},
-		{"question":"Its a [] with 2 [].", "answers":[["multiplexx"],["gaps"]]},
-		{"question":"Dany martins é []","answers":[["linda","maravilhosa"]]}
+		{"question":"It's a simple [].", "answers":[["question","mult"]]},
+		{"question":"Its a [] with 2 [].", "answers":[["multiplexx"],["gaps"]]}
 	]
 }
