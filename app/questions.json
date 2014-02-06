@@ -1,7 +1,7 @@
 {
-	"Title":"Atividade de fixação",
+	"Title":"Activity",
 	"questions":[
-		{"question":"It's a simple [].", "answers":[["question","mult"]]},
+		{"question":"It's a simple [].", "answers":[["question","mult","tree"]]},
 		{"question":"Its a [] with 2 [].", "answers":[["multiplexx"],["gaps"]]}
 	]
 }

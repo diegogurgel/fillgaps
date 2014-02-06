@@ -1,9 +1,17 @@
 $(document).ready(function() {
-	$.get('questions.json', function(data) {
-		for (var i = 0, len = data.questions.length;i<len; i++) {
-			setQuestionDOM(data.questions[i]);
-		};
-	});
+	if(Q){
+			for (var i = 0, len = Q.questions.length;i<len; i++) {
+				setQuestionDOM(Q.questions[i]);
+			};
+	}else{
+		$.get('questions.json', function(data) {
+			for (var i = 0, len = data.questions.length;i<len; i++) {
+				setQuestionDOM(data.questions[i]);
+			};
+		});
+
+
+	}
 });
 
 function setQuestionDOM(question){
