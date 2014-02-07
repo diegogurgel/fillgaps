@@ -14,6 +14,6 @@
 List of questions with gaps - JSON format in
 `app/scripts/questions.js`
 
-The gaps are represented by brackets []
+The gaps are represented by brackets [ ]
 
 Each gap has one or more answers ["word 1", "word2", word3"]

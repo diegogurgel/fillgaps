@@ -12,6 +12,21 @@ $(document).ready(function() {
 
 
 	}
+	$("button.confirm").click(function(event) {
+		console.log("Correct answers: "+countCorrects($(".question-container input")));
+		console.log("Wrong answers: "+countWrongs($(".question-container input")));
+
+		/**
+		
+			TODO:
+			- Go to next slide
+			- Send result to anywhere
+		
+		**/
+		
+	});
+
+
 });
 
 function setQuestionDOM(question){
@@ -40,7 +55,6 @@ function setQuestionDOM(question){
 
 
 		input.onkeyup = function(){
-			console.log(answers[this.iAnswer]);
 			if(answers[this.iAnswer].length>1){
 				 for (var i = 0; i < answers[this.iAnswer].length; i++) {
 				 	if(compare(this,answers[this.iAnswer][i])){
@@ -50,7 +64,8 @@ function setQuestionDOM(question){
 				 };
 
 			}else{
-				compare(this,answers[this.iAnswer][0])
+				compare(this,answers[this.iAnswer][0]);
+
 			}
 
 		}
@@ -75,14 +90,17 @@ function setQuestionDOM(question){
 	$(".question-container").append(divQuestion);
 
 }
+//Compare the value of the element and the text are equals
 function compare(elem, text){
 				if(elem.value.toLowerCase() === text.toLowerCase()){
 					$(elem).removeClass('wrong');
 					$(elem).addClass('correct');
+					elem.correct = true;
 					return true;
 				}else{
 					$(elem).removeClass('correct');
 					$(elem).addClass('wrong');
+					elem.correct = false;
 					return false;
 				}
 			if(elem.value==""){
@@ -90,6 +108,23 @@ function compare(elem, text){
 				return false;
 			}
 
-
 }
 
+function countCorrects(inputs){
+	var count = 0;
+	for (var i = 0; i < inputs.length; i++) {
+		if(inputs[i].correct){
+			count++;
+		}
+	};
+	return count;
+}
+function countWrongs(inputs){
+	var count = 0;
+	for (var i = 0; i < inputs.length; i++) {
+		if(!inputs[i].correct){
+			count++;
+		}
+	};
+	return count;
+}
