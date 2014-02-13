@@ -15,15 +15,23 @@ $(document).ready(function() {
 	$("button.confirm").click(function(event) {
 		console.log("Correct answers: "+countCorrects($(".question-container input")));
 		console.log("Wrong answers: "+countWrongs($(".question-container input")));
-
+		$(".message-box").addClass('active')
 		/**
 		
 			TODO:
-			- Go to next slide
+			
 			- Send result to anywhere
 		
 		**/
 		
+	});
+	$(".btn.btn-cancel.act-cancel").click(function(event) {
+		$(".message-box").removeClass('active');
+	});
+
+	$(".btn.btn-confirm.act-ok").click(function(event) {
+		/* - Go to next slide */
+		$(".message-box").removeClass('active');
 	});
 
 
